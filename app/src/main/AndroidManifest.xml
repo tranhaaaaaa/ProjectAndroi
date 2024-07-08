@@ -26,14 +26,17 @@
             android:parentActivityName=".activities.manager.ManageProductsActivity">
 
         </activity>
+
         <activity
             android:name=".activities.manager.CreateCategoryActivity"
             android:exported="true"
+            android:theme="@style/Theme.CafeRestaurantSystem.NoActionBar"
             android:parentActivityName=".ui.manager.ManagerFragment">
         </activity>
         <activity
             android:name=".activities.manager.ManageProductsActivity"
-            android:exported="true">
+            android:exported="false"
+            android:theme="@style/Theme.CafeRestaurantSystem.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.manager.ManagerFragment" />
