@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         String currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
 
         // Reference the Firestore database
+
+        //Xác thực người dùng:
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         // Reference the 'users' collection in Firestore and find the user document by email
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                                     });
                                 }
                             } catch (NumberFormatException e) {
-                                // Xử lý ngoại lệ
+                              //  Log
                             }
                         }
                     }
@@ -108,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu; this adds items to the action bar if it present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }

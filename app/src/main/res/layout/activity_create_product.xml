@@ -95,12 +95,11 @@
 
         <Button
             android:id="@+id/create_product_btnCreate"
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Create"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#4CAF50"
-            />
+            android:text="Create" />
     </LinearLayout>
 
 

@@ -26,7 +26,7 @@ import java.util.List;
 public class NavMenuProductActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ImageView categoryImageView;
-    FloatingActionButton btnMyCart;
+  //  FloatingActionButton btnMyCart;
     List<ProductModel> productModels;
     NavMenuItemAdapter adapter;
 
@@ -44,6 +44,7 @@ public class NavMenuProductActivity extends AppCompatActivity {
         String categoryImageURL = getIntent().getStringExtra("CategoryImage");
         categoryImageView = findViewById(R.id.nav_menu_item_category_img);
         if (categoryImageURL != null) {
+            // Sử dụng Glide để tải hình ảnh vào ImageView
             Glide.with(this).load(categoryImageURL).into(categoryImageView);
 
             recyclerView = findViewById(R.id.nav_menu_products_rec);
@@ -52,7 +53,7 @@ public class NavMenuProductActivity extends AppCompatActivity {
             adapter = new NavMenuItemAdapter(this, productModels);
             recyclerView.setAdapter(adapter);
 
-
+            // Truy vấn Firestore để lấy danh sách sản phẩm theo categoryId
             db.collection("Products")
                     .whereEqualTo("categoryId", categoryId)
                     .get()
@@ -62,6 +63,7 @@ public class NavMenuProductActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
 
                                 for (QueryDocumentSnapshot document : task.getResult()) {
+                                    // Chuyển đổi tài liệu thành đối tượng ProductModel
                                     ProductModel productModel = document.toObject(ProductModel.class);
                                     productModels.add(productModel);
 

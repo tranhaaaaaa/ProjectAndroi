@@ -50,7 +50,7 @@ public class ManagerFragment extends Fragment {
         txtManageCategories =  view.findViewById(R.id.nav_manager_manageCategories);
         txtManageOrder =  view.findViewById(R.id.nav_manager_manageOrder);
 
-        // Set click listeners for the TextViews
+        // Set click listeners for the TextView
         txtManageProducts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

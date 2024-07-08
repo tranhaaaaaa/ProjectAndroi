@@ -62,7 +62,7 @@ public class MyCartFragment extends Fragment {
         recyclerView.setAdapter(myCartAdapter);
 
         String userEmail = auth.getCurrentUser().getEmail();
-        //Log.d("MyCartAdapter", "ItemCount: " + userEmail);
+        //Log.d("MyCartAdapter", "ItemCount: " + userEmail)
         db.collection("AddToCart")
                 .whereEqualTo("userEmail",userEmail)
                 .get()

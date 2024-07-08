@@ -93,7 +93,7 @@ public class HomeFragment extends Fragment implements HomeLoadProducts {
 
         db.collection("Products")
                 .orderBy("productRating", Query.Direction.DESCENDING) // Sắp xếp theo rating giảm dần
-                .limit(10) // Giới hạn kết quả trả về 10 sản phẩm
+                .limit(10) // Giới hạn kết quả trả về 10 sản phẩm。
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

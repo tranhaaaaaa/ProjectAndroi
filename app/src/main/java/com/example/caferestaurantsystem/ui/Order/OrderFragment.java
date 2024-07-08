@@ -33,7 +33,7 @@ public class OrderFragment extends Fragment {
     ArrayList<OrderModel> orderModels;
 
     public OrderFragment() {
-        // Required empty public constructor
+        // Required empty public constructors
     }
 
     @Override
